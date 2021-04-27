@@ -5,7 +5,7 @@ WORKDIR /hivency-backend-test
 COPY Gemfile /hivency-backend-test/Gemfile
 COPY Gemfile.lock /hivency-backend-test/Gemfile.lock
 RUN bundle install
-COPY ../compose /hivency-backend-test
+COPY . /hivency-backend-test
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
