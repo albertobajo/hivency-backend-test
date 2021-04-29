@@ -30,6 +30,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Brings the RSpec testing framework to Ruby on Rails
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
+  # Provides a framework and DSL for defining and using factories
+  gem 'factory_bot_rails', '~> 6.1'
 end
 
 group :development do
