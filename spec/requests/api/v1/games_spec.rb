@@ -12,6 +12,14 @@ RSpec.describe "Api::V1::Games", type: :request do
 
     it 'returns games info'
 
+    it 'returns total number of games' do
+      create_list(:game, 10)
+
+      get "/api/v1/games.json"
+      json_response = JSON.parse(response.body)
+
+      expect(json_response['meta']['totalGames']).to eq(10)
+    end
 
     it 'returns games timestamps'
 
