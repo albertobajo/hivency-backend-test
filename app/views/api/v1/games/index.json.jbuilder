@@ -3,8 +3,7 @@ json.data do
 end
 
 json.meta do
-  json.totalGames @count
+  json.total_games @count
 end
 
-json.links do
-end
+json.links @metadata
