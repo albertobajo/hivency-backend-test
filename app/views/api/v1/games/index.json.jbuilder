@@ -1,5 +1,5 @@
 json.data do
-  json.array! @games, :created_at
+  json.partial! 'api/v1/games/game', collection: @games, as: :game
 end
 
 json.meta do

@@ -15,10 +15,10 @@ services:
       - "3000:3000"
     depends_on:
       - db
-  guard:
-    build: .
-    volumes:
-      - .:/hivency-backend-test
-    environment:
-      - RAILS_ENV=development
-    command: bundle exec guard --no-bundler-warning --no-interactions
+  # guard:
+  #   build: .
+  #   volumes:
+  #     - .:/hivency-backend-test
+  #   environment:
+  #     - RAILS_ENV=development
+  #   command: bundle exec guard --no-bundler-warning --no-interactions

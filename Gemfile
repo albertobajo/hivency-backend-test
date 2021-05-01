@@ -50,6 +50,8 @@ end
 group :test do
   # One-liners to test common Rails functionality
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
+  # Ensure a clean state during tests
+  gem 'database_cleaner-active_record'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

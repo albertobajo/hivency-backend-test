@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :move do
-    name { "MyString" }
-    move { 1 }
-    game { build(:game) }
+    name { "Bot" }
+    move { "rock" }
+
+    game
   end
 end
