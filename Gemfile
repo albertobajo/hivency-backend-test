@@ -38,8 +38,15 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # rspec command for spring
+  gem 'spring-commands-rspec', group: :development, require: false
   # Allows to automatically & intelligently launch specs when files are
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+end
+
+group :test do
+  # One-liners to test common Rails functionality
+  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
