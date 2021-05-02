@@ -3,7 +3,7 @@ class Api::V1::GamesController < ApplicationController
 
   def index
     @pagy, @games = pagy(Game.all)
-    @count = @games.count
+    @count = Game.count
     @metadata = pagy_metadata(@pagy)
   end
 
