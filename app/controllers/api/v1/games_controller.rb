@@ -8,7 +8,10 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(moves_attributes: [move_params])
+    @game = Game.new(moves_attributes: [move_params, bot_move_params])
+    @game.play
+    @game.save!
+
     render :show, status: :created
   end
 
@@ -16,5 +19,9 @@ class Api::V1::GamesController < ApplicationController
 
   def move_params
     params.permit(:name, :move)
+  end
+
+  def bot_move_params
+    { name: 'Bot', move: Move.moves.keys.sample }
   end
 end

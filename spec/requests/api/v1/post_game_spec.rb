@@ -11,7 +11,6 @@ RSpec.describe "POST /api/v1/games.json", type: :request do
     end
 
     it 'shows game result' do
-      pending("WIP")
       post '/api/v1/games.json', params: valid_data
 
       expect(response.body).to match_response_schema('Game')
