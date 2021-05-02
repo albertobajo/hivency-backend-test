@@ -52,6 +52,8 @@ group :test do
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
   # Ensure a clean state during tests
   gem 'database_cleaner-active_record'
+  # Ruby JSON Schema Validator
+  gem 'json-schema', '~> 2.8', '>= 2.8.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

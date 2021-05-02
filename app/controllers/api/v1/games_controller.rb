@@ -8,7 +8,8 @@ class Api::V1::GamesController < ApplicationController
   end
 
   def create
-    Game.create(moves_attributes: [move_params])
+    @game = Game.create(moves_attributes: [move_params])
+    render :show, status: :created
   end
 
   private

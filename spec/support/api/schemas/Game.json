@@ -1,0 +1,104 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "moves": [
+                {
+                    "name": "Ponky",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": "Ponky wins"
+        }
+    ],
+    "required": [
+        "moves",
+        "result"
+    ],
+    "properties": {
+        "moves": {
+            "$id": "#/properties/moves",
+            "type": "array",
+            "title": "The moves schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "name": "Ponky",
+                        "move": "paper"
+                    },
+                    {
+                        "name": "Bot",
+                        "move": "rock"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/moves/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/moves/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "name": "Ponky",
+                                "move": "paper"
+                            }
+                        ],
+                        "required": [
+                            "name",
+                            "move"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/moves/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "The name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Ponky"
+                                ]
+                            },
+                            "move": {
+                                "$id": "#/properties/moves/items/anyOf/0/properties/move",
+                                "type": "string",
+                                "title": "The move schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "paper"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "result": {
+            "$id": "#/properties/result",
+            "type": "string",
+            "title": "The result schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Ponky wins"
+            ]
+        }
+    },
+    "additionalProperties": true
+}

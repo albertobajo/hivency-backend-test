@@ -10,7 +10,12 @@ RSpec.describe "POST /api/v1/games.json", type: :request do
       }.to change(Game, :count).by(1)
     end
 
-    it 'shows game result'
+    it 'shows game result' do
+      pending("WIP")
+      post '/api/v1/games.json', params: valid_data
+
+      expect(response.body).to match_response_schema('Game')
+    end
   end
 
   context 'with invalid data' do
