@@ -1,24 +1,159 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+* [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-* Ruby version
+## Installation
 
-* System dependencies
+From the project folder, run bundle:
+```
+$ docker-compose run web bundle install
+```
 
-* Configuration
+Build the app:
+```
+$ docker-compose build
+```
 
-* Database creation
+Start the containers:
+```
+$ docker-compose up
+```
 
-* Database initialization
+Create and migrate the database:
 
-* How to run the test suite
+```
+$ docker-compose run web bundle exec rails db:create db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## RSpec
 
-* Deployment instructions
+There are [model specs](https://github.com/albertobajo/hivency-backend-test/tree/master/spec/models) and [request specs](https://github.com/albertobajo/hivency-backend-test/tree/master/spec/requests/api/v1).
 
-* ...
+```
+$ docker-compose run web bundle exec rspec
+```
+
+## Guard
+```
+$ docker-compose run web bundle exec guard --clear
+```
+
+## Requird Endpoints
+
+### 1. Game play
+
+#### URL
+
+`POST http://localhost:3000/api/v1/games.json`
+
+#### Sample Payload
+
+```
+{
+    "name": "Lucía",
+    "move": "paper"
+}
+```
+
+#### Sample Response
+
+```
+{
+    "moves": [
+        {
+            "name": "Lucía",
+            "move": "paper"
+        },
+        {
+            "name": "Bot",
+            "move": "rock"
+        }
+    ],
+    "result": "Lucía wins",
+    "created_at": "2021-05-03 15:24:06 UTC"
+}
+```
+
+### 2. History
+
+#### URL
+
+`GET http://localhost:3000/api/v1/games.json`
+
+#### Sample Response
+
+```
+{
+    "data": [
+        {
+            "moves": [
+                {
+                    "name": "Lucia",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": null,
+            "created_at": "2021-05-01 17:40:52 UTC"
+        },
+        {
+            "moves": [
+                {
+                    "name": "Luci",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": null,
+            "created_at": "2021-05-02 18:18:25 UTC"
+        },
+        {
+            "moves": [
+                {
+                    "name": "Luci",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": null,
+            "created_at": "2021-05-02 18:18:31 UTC"
+        },
+        ...
+        {
+            "moves": [
+                {
+                    "name": "Luci",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": "Luci wins",
+            "created_at": "2021-05-02 18:26:40 UTC"
+        }
+    ],
+    "meta": {
+        "total_games": 62
+    },
+    "links": {
+        "first_url": "http://localhost:3000/api/v1/games.json?page=1",
+        "prev_url": "http://localhost:3000/api/v1/games.json?page=",
+        "page_url": "http://localhost:3000/api/v1/games.json?page=1",
+        "next_url": "http://localhost:3000/api/v1/games.json?page=2",
+        "last_url": "http://localhost:3000/api/v1/games.json?page=4"
+    }
+}
+```
