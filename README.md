@@ -90,50 +90,7 @@ $ docker-compose run web bundle exec guard --clear
         {
             "moves": [
                 {
-                    "name": "Lucia",
-                    "move": "paper"
-                },
-                {
-                    "name": "Bot",
-                    "move": "rock"
-                }
-            ],
-            "result": null,
-            "created_at": "2021-05-01 17:40:52 UTC"
-        },
-        {
-            "moves": [
-                {
-                    "name": "Luci",
-                    "move": "paper"
-                },
-                {
-                    "name": "Bot",
-                    "move": "rock"
-                }
-            ],
-            "result": null,
-            "created_at": "2021-05-02 18:18:25 UTC"
-        },
-        {
-            "moves": [
-                {
-                    "name": "Luci",
-                    "move": "paper"
-                },
-                {
-                    "name": "Bot",
-                    "move": "rock"
-                }
-            ],
-            "result": null,
-            "created_at": "2021-05-02 18:18:31 UTC"
-        },
-        ...
-        {
-            "moves": [
-                {
-                    "name": "Luci",
+                    "name": "Lucía",
                     "move": "paper"
                 },
                 {
@@ -142,6 +99,51 @@ $ docker-compose run web bundle exec guard --clear
                 }
             ],
             "result": "Luci wins",
+            "created_at": "2021-05-01 17:40:52 UTC"
+        },
+        {
+            "moves": [
+                {
+                    "name": "John",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": "John wins",
+            "created_at": "2021-05-02 18:18:25 UTC"
+        },
+        {
+            "moves": [
+                {
+                    "name": "John",
+                    "move": "scissors"
+                },
+                {
+                    "name": "Bot",
+                    "move": "rock"
+                }
+            ],
+            "result": "Bot wins",
+            "created_at": "2021-05-02 18:18:31 UTC"
+        },
+
+        [...]
+        
+        {
+            "moves": [
+                {
+                    "name": "Megan",
+                    "move": "paper"
+                },
+                {
+                    "name": "Bot",
+                    "move": "scissors"
+                }
+            ],
+            "result": "Bot wins",
             "created_at": "2021-05-02 18:26:40 UTC"
         }
     ],
