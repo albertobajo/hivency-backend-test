@@ -4,7 +4,7 @@ class Api::V1::GamesController < ApplicationController
   def index
     @pagy, @games = pagy(Game.all.includes(:moves))
     @count = @pagy.count
-    @metadata = pagy_metadata(@pagy)
+    @metadata = pagy_metadata(@pagy, absolute: true)
   end
 
   def create
