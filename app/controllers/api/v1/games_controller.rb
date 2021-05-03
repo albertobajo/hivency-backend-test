@@ -2,8 +2,8 @@ class Api::V1::GamesController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @games = pagy(Game.all)
-    @count = Game.count
+    @pagy, @games = pagy(Game.all.includes(:moves))
+    @count = @pagy.count
     @metadata = pagy_metadata(@pagy)
   end
 
