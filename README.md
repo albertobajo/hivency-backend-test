@@ -46,7 +46,14 @@ $ docker-compose run web bundle exec guard --clear
 
 #### URL
 
-`POST http://localhost:3000/api/v1/games.json`
+```
+curl --location --request POST 'localhost:3000/api/v1/games.json' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Lucía",
+    "move": "paper"
+}'
+```
 
 #### Sample Payload
 
@@ -78,9 +85,9 @@ $ docker-compose run web bundle exec guard --clear
 
 ### 2. History
 
-#### URL
+#### cURL
 
-`GET http://localhost:3000/api/v1/games.json`
+`curl --location --request GET 'localhost:3000/api/v1/games.json'`
 
 #### Sample Response
 
